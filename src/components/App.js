@@ -1,14 +1,24 @@
 import React from "react"
 import { fetchCovidCardData } from "../api/corona19api"
 
+import CardContainer from "./card/CardContainer"
+
 class App extends React.Component {
+	state = {
+		cardData: {},
+	}
 	async componentDidMount() {
 		const response = await fetchCovidCardData()
-		console.log("app s", response)
+
+		this.setState({ cardData: response })
+		console.log(this.state)
 	}
 
 	render() {
-		return <div>hello</div>
+		const { cardData } = this.state
+		console.log("App", cardData)
+
+		return <CardContainer cardData={cardData} />
 	}
 }
 
