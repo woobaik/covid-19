@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Line } from "react-chartjs-2"
 
 const MainChart = ({ chartData }) => {
-	console.log("deal with this", chartData)
 	const { date, confirmed, recovered, deaths } = chartData
 
 	const chart = () => {

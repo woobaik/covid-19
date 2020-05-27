@@ -1,5 +1,7 @@
 import React, { Fragment } from "react"
 import { fetchCovidCardData, fetchGlobalChartData } from "../api/corona19api"
+import "./App.css"
+import { COUNTRIES_DATA } from "../api/countries"
 
 import { Container } from "semantic-ui-react"
 
@@ -11,13 +13,14 @@ class App extends React.Component {
 	state = {
 		cardData: {},
 		chartData: [],
+		country: COUNTRIES_DATA,
 	}
 	async componentDidMount() {
 		const cardResponse = await fetchCovidCardData()
 		const chartResponse = await fetchGlobalChartData()
 
 		this.setState({ cardData: cardResponse, chartData: chartResponse })
-		console.log(this.state)
+		console.log("hahahah", this.state)
 	}
 
 	render() {
@@ -26,6 +29,7 @@ class App extends React.Component {
 		return (
 			<Fragment>
 				<NavBar />
+
 				<Container>
 					<CardContainer cardData={cardData} />
 					<MainChart chartData={chartData} />

@@ -20,7 +20,7 @@ export const fetchGlobalChartData = async (asynce) => {
 	try {
 		const response = await axios.get(url)
 		const { data } = response
-		console.log("X-Man", data)
+
 		const modifiedData = data.map((dailyData) => {
 			return {
 				confirmed: dailyData.confirmed.total,
