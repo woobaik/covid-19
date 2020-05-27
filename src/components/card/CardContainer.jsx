@@ -4,9 +4,10 @@ import { Card } from "semantic-ui-react"
 
 const cardRender = (obj) => {}
 
-const CardContainer = ({ cardData: { Global, Date } }) => {
+const CardContainer = ({ cardData }) => {
 	//in case its just global
-	console.log("wtf", Global)
+	const { Global, Date } = cardData
+
 	return (
 		<Card.Group itemsPerRow={3}>
 			<StatusCard

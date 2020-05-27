@@ -3,12 +3,11 @@ import { Card, Icon } from "semantic-ui-react"
 import AnimatedNumber from "animated-number-react"
 
 const StatusCard = ({ cardData, title, date, color }) => {
-	console.log("Card", cardData)
 	//this is a functionfor AnimatedNumber, without this function, it will display so many decimal points.
 	const formatValue = (value) => {
 		return `${value.toFixed(0)}`
 	}
-	console.log(date)
+
 	return (
 		<Card color={color}>
 			<Card.Content header={title} textAlign="center" />
